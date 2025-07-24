@@ -13,7 +13,7 @@
 //! - AST1060A1/A2
 
 use core::fmt::Debug;
-use proposed_traits::otp::{ErrorType, Error, ErrorKind, OtpSession, OtpRegions};
+use peripheral_traits::otp::{ErrorType, Error, ErrorKind, OtpSession, OtpRegions};
 
 /// ASPEED-specific OTP error kinds extending the generic error kinds
 #[derive(Debug, Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Hash)]
@@ -677,7 +677,7 @@ impl AspeedOtpSecurity for ExampleOtpController {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use proposed_traits::otp::ErrorType;
+    use peripheral_traits::otp::ErrorType;
 
     // Mock error type for testing
     #[derive(Debug, Clone, Copy)]

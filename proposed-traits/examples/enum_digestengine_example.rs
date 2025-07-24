@@ -1,7 +1,7 @@
 // Enum-based digest polymorphism example using DigestInit and DigestEngine
 // Uses the actual digest traits and sha2 crate for real hashing
 use sha2::{Sha256, Sha384, Sha512, Digest};
-use proposed_traits::digest::{DigestInit, DigestOp, DigestAlgorithm, ErrorType};
+use crypto_traits::digest::{DigestInit, DigestOp, DigestAlgorithm, ErrorType};
 use core::convert::Infallible;
 
 // --- Marker types for algorithms ---

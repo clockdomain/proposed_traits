@@ -5,7 +5,7 @@
 //! the generic block device interface and SPI NOR specific operations.
 
 use core::fmt::Debug;
-use proposed_traits::block_device::{
+use peripheral_traits::block_device::{
     BlockDevice, BlockRange, ErrorType, Error, ErrorKind,
 };
 

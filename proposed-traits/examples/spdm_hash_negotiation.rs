@@ -1,7 +1,7 @@
 /// Example implementation demonstrating protocol-driven hash negotiation
 /// This shows how the enhanced trait design supports SPDM hash algorithm negotiation
 use core::fmt::Debug;
-use proposed_traits::digest::{DigestRegistry, ErrorType, Error, ErrorKind, DynamicDigestOp};
+use crypto_traits::digest::{DigestRegistry, ErrorType, Error, ErrorKind, DynamicDigestOp};
 
 // Maximum number of supported algorithms for platform systems
 const MAX_ALGORITHMS: usize = 8;
