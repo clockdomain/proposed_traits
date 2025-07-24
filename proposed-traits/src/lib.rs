@@ -1,19 +1,24 @@
 #![no_std]
 #![deny(unsafe_code)]
 
-pub mod common;
-pub mod digest;
-pub mod ecdsa;
-pub mod mac;
-pub mod rsa;
+//! Compatibility layer for the original proposed-traits crate.
+//! 
+//! This crate re-exports all traits from the separate peripheral_traits,
+//! crypto_traits, and messaging_traits crates for backward compatibility.
+//! 
+//! For new projects, consider using the specific crates directly:
+//! - `peripheral_traits` for peripheral device abstractions
+//! - `crypto_traits` for cryptographic algorithm abstractions  
+//! - `messaging_traits` for inter-service messaging
 
-pub mod block_device;
-pub mod i2c_target;
-pub mod i3c_master;
-pub mod i3c_target;
-pub mod system_control;
+// Re-export peripheral traits
+pub use peripheral_traits::*;
 
-pub mod client;
-pub mod otp;
-pub mod service;
-pub mod symm_cipher;
+// Re-export crypto traits
+pub use crypto_traits::*;
+
+// Re-export messaging traits - avoid common module conflict
+pub use messaging_traits::{client, service};
+pub mod common {
+    pub use messaging_traits::common::*;
+}

@@ -1,7 +1,9 @@
 [workspace]
 members = [
+    "peripheral_traits",
+    "crypto_traits", 
+    "messaging_traits",
     "proposed-traits",
-    "simulation",
 ]
 resolver = "2"
 

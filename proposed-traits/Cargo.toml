@@ -4,19 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-embedded-storage = "0.3.1"
-rand_core = "0.6"
-async-trait = "0.1.51"
-embedded-hal = "1"
-embedded-io = "0.6.1"
-sha2 = "0.10"
-# ECDSA dependencies for reference implementation
-p256 = "0.13"
-ecdsa = "0.16"
-elliptic-curve = "0.13"
-signature = "2.1"
-rand = "0.8"
-zeroize = "1.6"
+# Compatibility layer - re-export all traits from separate crates
+peripheral_traits = { path = "../peripheral_traits" }
+crypto_traits = { path = "../crypto_traits" }
+messaging_traits = { path = "../messaging_traits" }
 
 [[example]]
 name = "otp_aspeed"
